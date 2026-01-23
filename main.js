@@ -1,12 +1,17 @@
-import { renderStats, showError } from "./ui.js";
-
 async function fetchStats(username) {
-  const response = await fetch(`/api/stats/${username}`);
-  if (!response.ok) {
-    const error = await response.json();
-    throw new Error(error.error);
+  const url = `https://fortnite-api.com/v1/stats/br/v2?name=${username}`;
+
+  try {
+    const response = await axios.get(url, {
+      headers: {
+        Authorization: "93fb34ee-3907-4120-9dd6-4951eb712ca0"
+      }
+    });
+
+    return response.data.data;
+  } catch (err) {
+    throw new Error("User not found or API error");
   }
-  return response.json();
 }
 
 document.querySelector("#searchBtn").addEventListener("click", async () => {

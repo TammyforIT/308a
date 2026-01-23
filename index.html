@@ -2,18 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Fortnite Stats Viewer</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fortnite Stats Lookup</title>
 </head>
 <body>
 
-  <h1>Fortnite Stats Viewer</h1>
+  <h1>Fortnite Stats Lookup</h1>
 
-  <input id="username" placeholder="Enter Fortnite username">
+  <input id="username" type="text" placeholder="Enter Fortnite username">
   <button id="searchBtn">Search</button>
 
   <div id="results"></div>
 
-  <script type="module" src="js/main.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+  <script src="main.js"></script>
+  <script src="ui.js"></script>
+
 </body>
 </html>
