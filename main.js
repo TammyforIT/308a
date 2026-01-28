@@ -1,3 +1,4 @@
+import { renderStats, showError } from "./ui.js";
 async function fetchStats(username) {
   const url = `https://fortnite-api.com/v1/stats/br/v2?name=${username}`;
 
