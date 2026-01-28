@@ -1,11 +1,13 @@
+import { API_URL, API_KEY } from "./config.js";
 import { renderStats, showError } from "./ui.js";
+
 async function fetchStats(username) {
-  const url = `https://fortnite-api.com/v1/stats/br/v2?name=${username}`;
+  const url = `${API_URL}?name=${username}`;
 
   try {
     const response = await axios.get(url, {
       headers: {
-        Authorization: "93fb34ee-3907-4120-9dd6-4951eb712ca0"
+        Authorization: API_KEY
       }
     });
 
@@ -30,4 +32,3 @@ document.querySelector("#searchBtn").addEventListener("click", async () => {
     showError(err.message);
   }
 });
-//getelementbyid could work too.
