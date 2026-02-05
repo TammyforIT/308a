@@ -1,4 +1,3 @@
-
 export function renderStats(data) {
   const container = document.getElementById("results");
 
