@@ -2,7 +2,7 @@ import { API_URL, API_KEY } from "./config.js";
 import { renderStats, showError } from "./ui.js";
 
 async function fetchStats(username) {
-  const url = `${API_URL}?name=${username}`;
+  const url = `${API_URL}?name=${encodeURIComponent(username)}`;
 
   try {
     const response = await axios.get(url, {
